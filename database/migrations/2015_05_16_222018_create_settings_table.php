@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQwotesTable extends Migration {
+class CreateSettingsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,13 @@ class CreateQwotesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('qwotes', function(Blueprint $table)
+		Schema::create('setting', function(Blueprint $table)
 		{
 			$table->bigIncrements('id');
 			$table->bigInteger('user_id');
-			$table->longText('qwote');
-			$table->string('author');
-			$table->string('type');
-			$table->boolean('public')->default(false)->nullable();
-			$table->boolean('vetted')->default(false)->nullable();
+			$table->string('type')->nullable();
+			$table->boolean('subscribe_to_public_qwotes')->default(false)->nullable();
+			$table->boolean('subscribe_to_my_qwotes')->default(true)->nullable();
 			$table->timestamps();
 		});
 	}
@@ -32,7 +30,7 @@ class CreateQwotesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('qwotes');
+		Schema::drop('setting');
 	}
 
 }

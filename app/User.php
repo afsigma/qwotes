@@ -38,4 +38,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->hasMany('qwotes\Qwote');
     }
 
+
+    public function Settings()
+    {
+        return $this->hasOne('qwotes\Setting');
+    }
+
 }

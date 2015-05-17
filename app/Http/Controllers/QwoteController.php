@@ -37,17 +37,7 @@ class QwoteController extends Controller {
 	 */
 	public function create()
 	{
-		$qwote = new Qwote;
-
-
-        $qwote->user_id = Auth::user()->id;
-		$qwote->qwote = Request::input('qwote');
-		$qwote->author = Request::input('author');
-		$qwote->type = Request::input('type');
-
-		$qwote->save();
-
-		return Redirect::back();
+		
 
 		
 	}
@@ -57,9 +47,19 @@ class QwoteController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Requests\QwotesRequest $request)
 	{
-		//
+		$qwote = new Qwote;
+
+
+        $qwote->user_id = Auth::user()->id;
+		$qwote->qwote = Request::input('qwote');
+		$qwote->author = Request::input('author');
+		$qwote->type = Request::input('type');
+        $qwote->public = Request::input('public');
+		$qwote->save();
+
+		return Redirect::route('home');
 	}
 
 	/**
@@ -81,7 +81,9 @@ class QwoteController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$qwotes = Qwote::where('user_id', Auth::user()->id)->where('id', $id)->get();
+		
+		return view('qwotes.edit')->with('qwotes', $qwotes);
 	}
 
 	/**
@@ -92,7 +94,18 @@ class QwoteController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		$qwote = Qwote::where('user_id', Auth::user()->id)->where('id', $id)->first();
+
+
+        $qwote->user_id = Auth::user()->id;
+		$qwote->qwote = Request::input('qwote');
+		$qwote->author = Request::input('author');
+		$qwote->type = Request::input('type');
+        $qwote->public = Request::input('public');
+		$qwote->save();
+
+		return Redirect::route('home');
+
 	}
 
 	/**
@@ -103,7 +116,11 @@ class QwoteController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$qwote = Qwote::where('user_id', Auth::user()->id)->where('id', $id)->first();
+
+		$qwote->delete();
+
+		return Redirect::route('home');
 	}
 
 }

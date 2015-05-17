@@ -33,7 +33,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-        $qwotes = Qwote::where('user_id', Auth::user()->id)->paginate(4);
+        $qwotes = Qwote::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(4);
 
 		return view('home')->with('qwotes', $qwotes);
 	}

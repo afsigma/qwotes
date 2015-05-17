@@ -1,26 +1,47 @@
 @extends('app')
 
 @section('content')
-<div class="container">
+<div class="container home">
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
-			
-			<a class="btn-floating btn-large waves-effect waves-light red" href="/new"><i class="mdi-content-add"></i></a>
+
+    <div class="row">
+              
+              <div class="input-field col s12">
+              <h5 class="flow-text">My Qwotes</h5>
+              </div>
+            </div>
+			<a class="btn-floating btn-large waves-effect blue darken-1" href="/new"><i class="mdi-content-add"></i></a>
 
             <div class="row">
         <div class="col-md-10 col-md-offset-1">
 
          @foreach($qwotes as $qwote)
 
+
           <div class="card">
             
             <div class="card-content">
 
-              <p class="blue-text text-darken-2">{{$qwote->qwote}}</p>
+              <p class="blue-text text-darken-2 flow-text">{{$qwote->qwote}}</p>
+
+               <span class="grey-text lighten-3 author">&#8212 {{$qwote->author}}</span>
             </div>
             <div class="card-action">
-              <span class="grey-text lighten-3">{{$qwote->author}}</span>
+
+
+             
+              <a class="btn-floating orange accent-1" href="{{ URL::route('edit', $qwote->id) }}"><i class="mdi-content-create"></i></a>
+
+
+
               
+            <span class="btn-floating red accent-1">
+          {!! Form::open(array('route' => array('delete', $qwote->id), 'method' => 'delete')) !!}
+            <button type="submit"  class="btn-floating red accent-1" onclick="if(!confirm('Are you sure to delete this item?')){return false;};"><i class="mdi-content-clear"></i></button>
+           {!! Form::close() !!}
+             </span> 
+
             </div>
           </div>
          @endforeach

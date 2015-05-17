@@ -32,9 +32,12 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-         $qwotes = Qwote::all()->random();
+     
 
-		return view('welcome')->with('qwotes', $qwotes);
+         $qwotes = Qwote::all()->where('public', 1)->where('vetted', 1)->random();
+
+
+		 return view('welcome')->with('qwotes', $qwotes);
 	}
 
 }

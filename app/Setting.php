@@ -2,21 +2,21 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Qwote extends Model {
+class Setting extends Model {
 
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'qwotes';
+	protected $table = 'setting';
 
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['qwote', 'author', 'type', 'public', 'vetted'];
+	protected $fillable = ['type', 'user_id','subscribe_to_public_qwotes', 'subscribe_to_my_qwotes'];
 
 
 
@@ -24,6 +24,5 @@ class Qwote extends Model {
     {
         return $this->belongsTo('qwotes\User');
     }
-
 
 }

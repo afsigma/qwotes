@@ -5,26 +5,19 @@
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			
+                  @foreach ($qwotes as $qwote)
 
+                  {!! Form::model($qwote, array('method' => 'put', 'route' => array('update', $qwote->id))) !!}
                  
-                  {!! Form::open(['role'=>'form', 'class'=>'form-horizontal', 'action'=>'QwoteController@store']) !!}
+                  
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="row">
 							
 							<div class="input-field col s12">
-							<h5 class="flow-text">Add Qwote</h5>
+							<h5 class="flow-text">Edit Qwote</h5>
 							</div>
 						</div>
-
-						@if ($errors->any())
-                           @foreach ($errors->all() as $error)
-                          <blockquote>
-                             <span class="red-text lighten-3">{{ $error }}</span>
-                          </blockquote>
-                            @endforeach 
-
-				        @endif
 
 
 						<div class="row">
@@ -46,15 +39,17 @@
 
                         <div class="row">	
 						<div class="input-field col s12">
+
+						
                       
-                            {!! Form::select('type', ['General' => 'general', 'Driver' => 'driver', 'Expressive' => 'expressive', 'Amiable'=>'amiable', 'Analytical'=>'analytical'], 'General') !!}
+                            {!! Form::select('type', ['General' => 'general', 'Driver' => 'driver', 'Expressive' => 'expressive', 'Amiable'=>'amiable', 'Analytical'=>'analytical'], $qwote->type) !!}
                        
                           <label for="type" class="blue-text text-darken-2">Personality Type</label>
 
                         </div>
                         </div>
 
-                          <div class="row">	
+                         <div class="row">	
 						<div class="input-field col s12">
                           
                           {!! Form::checkbox('public', true, null, ['id' => 'public']) !!}
@@ -68,16 +63,14 @@
 						<div class="row">
 							<div class="input-field col s12">
 
-							{!! Form::submit('Create', ['class'=>'btn btn-primary blue lighten-1']) !!}
+							{!! Form::submit('Update', ['class'=>'btn btn-primary blue lighten-1']) !!}
 								
 							</div>
 						</div>
 				  {!! Form::close() !!}
-
-				   
+				  @endforeach 
 			
 		</div>
 	</div>
 </div>
 @endsection
-

@@ -4,9 +4,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Qwote</title>
+	<title>Qwotes</title>
 
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/materialize.min.css') }}" rel="stylesheet">
 
 	
 
@@ -17,8 +18,8 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-    <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+   
+ 
 
   
           
@@ -38,8 +39,10 @@
             <li><a href="{{ url('/auth/login') }}">Login</a></li>
             <li><a href="{{ url('/auth/register') }}">Register</a></li>
           @else
-            
+                <li><a href="{{ url('home') }}">Home</a></li>
+                <li><a href="{{ url('settings') }}">Settings</a></li>
                 <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+
              
           @endif
        
@@ -49,7 +52,8 @@
             <li><a href="{{ url('/auth/login') }}">Login</a></li>
             <li><a href="{{ url('/auth/register') }}">Register</a></li>
           @else
-            
+            <li><a href="{{ url('home') }}">Home</a></li>
+            <li><a href="{{ url('settings') }}">Settings</a></li>
             <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
              
           @endif
@@ -59,10 +63,29 @@
 
 	@yield('content')
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  <footer class="page-footer white">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                
+              </div>
+              
+            </div>
+          </div>
+          <div class="footer-copyright blue lighten-2">
+            <div class="container">
+
+            © {{date('Y')}} Copyright Junecity LLC
+          
+            </div>
+          </div>
+        </footer>
+
+<script type="text/javascript" src="{{ asset('/js/jquery-2.1.1.min.js') }}"></script>
 
 <!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+<script src="{{ asset('/js/materialize.min.js') }}"></script>
 
   <script>
 
@@ -73,7 +96,10 @@
 
   $('select').material_select();
 
+
 	</script>
+
+  
 
 </body>
 </html>

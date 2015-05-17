@@ -11,13 +11,27 @@
 |
 */
 
+
+
+
+
 Route::get('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get('home', ['as' => 'home', 'uses' => 'HomeController@index']);
 
-Route::get('new', 'QwoteController@index');
+Route::get('new', ['as' => 'new', 'uses' => 'QwoteController@index']);
 
-Route::post('create', 'QwoteController@create');
+Route::get('edit/{id}', ['as' => 'edit', 'uses' => 'QwoteController@edit']);
+
+Route::delete('delete/{id}', ['as' => 'delete', 'uses' => 'QwoteController@destroy']);
+
+Route::put('update/{id}', ['as' => 'update', 'uses' => 'QwoteController@update']);
+
+Route::get('settings', ['as' => 'settings', 'uses' => 'SettingController@index']);
+
+Route::put('settings_update/{id}', ['as' => 'settings_update', 'uses' => 'SettingController@update']);
+
+Route::post('create', 'QwoteController@store');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

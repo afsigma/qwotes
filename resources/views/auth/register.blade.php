@@ -1,64 +1,74 @@
 @extends('app')
 
 @section('content')
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Register</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+		<div class="col-md-10 col-md-offset-1">
+			
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+                 
+                  <form method="POST" action="{{ url('/auth/register') }}">
+				  <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Name</label>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                        
+                        <div class="row">
+							
+							<div class="input-field col s12">
+							<h5 class="flow-text">Register</h5>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+						@if ($errors->any())
+                           @foreach ($errors->all() as $error)
+                          <blockquote>
+                             <span class="red-text lighten-3">{{ $error }}</span>
+                          </blockquote>
+                            @endforeach 
+
+				        @endif
+
+
+						<div class="row">
+							
+							<div class="input-field col s12">
+							<input type="text" class="materialize-text" name="name" value="{{ old('name') }}">	
+							<label for="name" class="blue-text text-darken-2">Name</label>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
+						<div class="row">	
+							<div class="input-field col s12">
+							<input type="email" class="materialize-text" name="email" value="{{ old('email') }}">
+								<label for="email" class="blue-text text-darken-2">Email</label>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Confirm Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password_confirmation">
+						<div class="row">	
+							<div class="input-field col s12">
+							<input type="password" class="materialize-text" name="password">
+							<label for="password" class="blue-text text-darken-2">Password</label>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
-									Register
-								</button>
+						<div class="row">	
+							<div class="input-field col s12">
+							<input type="password" class="materialize-text" name="password_confirmation">
+							<label for="password_confirmation" class="blue-text text-darken-2">Password Confirmation</label>
 							</div>
 						</div>
-					</form>
-				</div>
-			</div>
+
+						<div class="row">
+							<div class="input-field col s12">
+
+							{!! Form::submit('Register', ['class'=>'btn btn-primary blue lighten-1']) !!}
+								
+							</div>
+						</div>
+
+
+						
+				 </form>
+			
 		</div>
 	</div>
 </div>

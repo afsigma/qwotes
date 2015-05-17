@@ -47,7 +47,7 @@
             <div class="container">
              <div class="row welcome">
                <div class="center quote">&#34 {{ $qwotes->qwote }} &#34</div>
-               <p class="center name">&#8212 {{ $qwotes->author }}</p>
+               <p class="center author">&#8212 {{ $qwotes->author }}</p>
             </div>
             
             </div>

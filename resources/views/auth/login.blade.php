@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-<div class="container">
+<div class="container home">
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			
@@ -10,7 +10,21 @@
                   <form method="POST" action="{{ url('/auth/login') }}">
 				  <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
+                        <div class="row">
+							
+							<div class="input-field col s12">
+							<h5 class="flow-text">Login</h5>
+							</div>
+						</div>
 
+						@if ($errors->any())
+                           @foreach ($errors->all() as $error)
+                          <blockquote>
+                             <span class="red-text lighten-3">{{ $error }}</span>
+                          </blockquote>
+                            @endforeach 
+
+				        @endif
 
 
 						<div class="row">
