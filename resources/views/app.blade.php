@@ -7,7 +7,7 @@
 	<title>Qwotes</title>
 
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/materialize.min.css') }}" rel="stylesheet">
+    
 
 	
 
@@ -18,8 +18,8 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-   
- 
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
 
   
           
@@ -82,10 +82,10 @@
           </div>
         </footer>
 
-<script type="text/javascript" src="{{ asset('/js/jquery-2.1.1.min.js') }}"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
 <!-- Compiled and minified JavaScript -->
-<script src="{{ asset('/js/materialize.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
 
   <script>
 
