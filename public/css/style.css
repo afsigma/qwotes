@@ -1,4 +1,8 @@
-.btn-floating.btn-large{margin-bottom:20px;}
+nav .brand-logo {
+	margin-left: 40px;
+}
+
+nav ,.btn-floating.btn-large{margin-bottom:20px;}
 
 .quote {
 font-size: 30px;
