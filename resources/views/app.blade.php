@@ -76,7 +76,7 @@
           <div class="footer-copyright blue lighten-2">
             <div class="container">
 
-            © {{date('Y')}} Copyright Junecity LLC
+            © {{date('Y')}} Copyright
           
             </div>
           </div>
