@@ -29,8 +29,8 @@
 
 	<nav class="blue lighten-1">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Qwotes</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <a href="{{ url('home') }}" class="brand-logo">Qwotes</a>
+      <a href="{{ url('home') }}" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
       <ul class="right hide-on-med-and-down">
      
 
@@ -76,7 +76,7 @@
           <div class="footer-copyright blue lighten-2">
             <div class="container">
 
-            © {{date('Y')}} Copyright
+            © 2010 - {{date('Y')}} Junecity LLC, All rights reserved.
           
             </div>
           </div>

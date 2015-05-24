@@ -2,6 +2,7 @@
 
 use qwotes\Qwote;
 use Auth;
+use qwotes\Commands\EmailQwotes;
 
 class HomeController extends Controller {
 
@@ -33,9 +34,13 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-        $qwotes = Qwote::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(4);
+        $job = new EmailQwotes;
 
-		return view('home')->with('qwotes', $qwotes);
+	   $this->dispatch($job);
+
+        //$qwotes = Qwote::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(4);
+
+		//return view('home')->with('qwotes', $qwotes);
 	}
 
 }
