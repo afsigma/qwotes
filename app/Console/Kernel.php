@@ -12,7 +12,8 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected $commands = [
 		'qwotes\Console\Commands\Inspire',
-		'qwotes\Commands\EmailQwotes',
+		'qwotes\Console\Commands\EmailQwotes',
+		
 	];
 
 	/**

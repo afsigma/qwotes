@@ -6,9 +6,8 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
-use Illuminate\Console\Command;
 
-class EmailQwotes extends Command implements SelfHandling, ShouldBeQueued {
+class LEmailQwotes extends Command implements SelfHandling, ShouldBeQueued {
 
 	use InteractsWithQueue, SerializesModels;
 
@@ -17,7 +16,7 @@ class EmailQwotes extends Command implements SelfHandling, ShouldBeQueued {
 	 *
 	 * @var string
 	 */
-	protected $name = 'EmailQwotes';
+	protected $name = 'LEmailQwotes';
 
 	/**
 	 * The console command description.
