@@ -2,7 +2,7 @@
 
 use qwotes\Qwote;
 use Auth;
-use qwotes\Commands\EmailQwotes;
+use qwotes\Commands\LEmailQwotes;
 
 class HomeController extends Controller {
 
@@ -34,7 +34,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-        $job = new EmailQwotes;
+        $job = new LEmailQwotes;
 
 	   $this->dispatch($job);
 
