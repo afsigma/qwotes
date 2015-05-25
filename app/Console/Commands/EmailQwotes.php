@@ -32,12 +32,12 @@ class EmailQwotes extends Command {
 	 */
 
     
-    public function handle()
+    public function fire()
 	{
 	
         $user = User::findOrFail(1);
 
-        Mail::queue('emails.reminder', ['user' => $user], function ($m) use ($user) {
+        Mail::send('emails.reminder', ['user' => $user], function ($m) use ($user) {
 
             $m->to($user->email, $user->name)->subject('Your Reminder!')->from('hi@qwotes.net');
 

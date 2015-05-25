@@ -2,7 +2,6 @@
 
 use qwotes\Qwote;
 use Auth;
-use qwotes\Commands\LEmailQwotes;
 
 class HomeController extends Controller {
 
@@ -34,13 +33,11 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-        $job = new LEmailQwotes;
+       
 
-	   $this->dispatch($job);
+        $qwotes = Qwote::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(4);
 
-        //$qwotes = Qwote::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(4);
-
-		//return view('home')->with('qwotes', $qwotes);
+		return view('home')->with('qwotes', $qwotes);
 	}
 
 }
