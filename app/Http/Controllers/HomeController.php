@@ -2,6 +2,8 @@
 
 use qwotes\Qwote;
 use Auth;
+use qwotes\User;
+use qwotes\Setting;
 
 class HomeController extends Controller {
 
@@ -33,11 +35,31 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-       
+        //$user = User::find(1);
 
-        $qwotes = Qwote::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(4);
+        //$settings = $user->setting()->get();
 
-		return view('home')->with('qwotes', $qwotes);
+
+       // $settings = Setting::where('subscribe_to_public_qwotes', 1)->get();
+
+        //$user = $settings->User()->all();
+
+         $users = Setting::with('user')->where('subscribe_to_public_qwotes', 1)->get();
+         
+         foreach ($users as $user) {
+
+           echo $user->User->email;
+         
+
+         }
+
+         
+        //return $user->User->email;
+
+
+        //$qwotes = Qwote::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(4);
+
+		//return view('home')->with('qwotes', $qwotes);
 	}
 
 }

@@ -39,7 +39,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
 
-    public function Settings()
+    public function Setting()
     {
         return $this->hasOne('qwotes\Setting');
     }

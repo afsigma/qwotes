@@ -12,7 +12,7 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected $commands = [
 		'qwotes\Console\Commands\Inspire',
-		'qwotes\Console\Commands\EmailQwotes',
+		'qwotes\Console\Commands\PublicEmailQwotes',
 		
 	];
 
@@ -27,8 +27,8 @@ class Kernel extends ConsoleKernel {
 		$schedule->command('inspire')
 				 ->hourly();
 
-	    $schedule->command('EmailQwotes')
-				 ->daily();			 
+	    $schedule->command('PublicEmailQwotes')
+				 ->everyFiveMinutes();			 
 	}
 
 }
