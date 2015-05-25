@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel {
 				 ->hourly();
 
 	    $schedule->command('EmailQwotes')
-				 ->everyFiveMinutes();			 
+				 ->daily();			 
 	}
 
 }

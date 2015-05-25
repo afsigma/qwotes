@@ -43,7 +43,7 @@ class EmailQwotes extends Command {
 
         });
 
-        $this->info('Queued');
+       
     
 	}
 	
