@@ -12,6 +12,26 @@ class EmailQwotes extends Command implements SelfHandling, ShouldBeQueued {
 	use InteractsWithQueue, SerializesModels;
 
 	/**
+	 * The console command name.
+	 *
+	 * @var string
+	 */
+	protected $name = 'EmailQwotes';
+
+	/**
+	 * The console command description.
+	 *
+	 * @var string
+	 */
+	protected $description = 'Testing EmailQwotes';
+
+	/**
+	 * Execute the console command.
+	 *
+	 * @return mixed
+	 */
+
+	/**
 	 * Create a new command instance.
 	 *
 	 * @return void
