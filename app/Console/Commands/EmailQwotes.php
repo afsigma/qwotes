@@ -42,6 +42,8 @@ class EmailQwotes extends Command {
             $m->to($user->email, $user->name)->subject('Your Reminder!')->from('hi@qwotes.net');
 
         });
+
+        $this->info('Queued');
     
 	}
 	
