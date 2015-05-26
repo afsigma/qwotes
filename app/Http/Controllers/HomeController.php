@@ -35,31 +35,11 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-        //$user = User::find(1);
+        
 
-        //$settings = $user->setting()->get();
+        $qwotes = Qwote::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(4);
 
-
-       // $settings = Setting::where('subscribe_to_public_qwotes', 1)->get();
-
-        //$user = $settings->User()->all();
-
-         $users = Setting::with('user')->where('subscribe_to_public_qwotes', 1)->get();
-         
-         foreach ($users as $user) {
-
-           echo $user->User->email;
-         
-
-         }
-
-         
-        //return $user->User->email;
-
-
-        //$qwotes = Qwote::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(4);
-
-		//return view('home')->with('qwotes', $qwotes);
+		return view('home')->with('qwotes', $qwotes);
 	}
 
 }
