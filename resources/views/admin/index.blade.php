@@ -37,10 +37,10 @@
 
          
           <tr>
-            <td class="ellipse">
+            <td class="ellipse blue-text text-darken-2">
             {{ $qwote->qwote }}
             <br>
-            <small class="light-blue-text lighten-2">{{ $qwote->author }}</small>
+            <small class="grey-text lighten-3">&#8212 {{ $qwote->author }}</small>
 
             </td>
 

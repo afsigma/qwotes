@@ -98,7 +98,7 @@ class BootstrapThreePresenter implements PresenterContract {
 	 */
 	protected function getActivePageWrapper($text)
 	{
-		return '<li class="active"><span>'.$text.'</span></li>';
+		return '<li class="active light-blue lighten-1"><span>'.$text.'</span></li>';
 	}
 
 	/**

@@ -31,14 +31,14 @@
 
 
              
-              <a class="btn-floating orange accent-1" href="{{ URL::route('edit', $qwote->id) }}"><i class="mdi-content-create"></i></a>
+              <a class="btn-floating light-blue lighten-2" href="{{ URL::route('edit', $qwote->id) }}"><i class="mdi-content-create"></i></a>
 
 
 
               
-            <span class="btn-floating red accent-1">
+            <span class="btn-floating light-blue lighten-2">
           {!! Form::open(array('route' => array('delete', $qwote->id), 'method' => 'delete')) !!}
-            <button type="submit"  class="btn-floating red accent-1" onclick="if(!confirm('Are you sure to delete this item?')){return false;};"><i class="mdi-content-clear"></i></button>
+            <button type="submit"  class="btn-floating light-blue lighten-2" onclick="if(!confirm('Are you sure to delete this item?')){return false;};"><i class="mdi-content-clear"></i></button>
            {!! Form::close() !!}
              </span> 
 
