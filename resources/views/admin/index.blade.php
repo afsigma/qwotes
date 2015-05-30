@@ -70,13 +70,10 @@
           @endforeach
         </tbody>
      
-           
-          
-        
-
          </table>
         
-
+         <?php echo $qwotes->render(); ?>
+         
         </div>
       </div>     
                   

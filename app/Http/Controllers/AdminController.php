@@ -25,7 +25,7 @@ class AdminController extends Controller {
 
 	public function index()
 	{
-		$qwotes = Qwote::all();
+		$qwotes = Qwote::orderBy('created_at', 'DESC')->paginate(10);
 
 		return view('admin.index')->with('qwotes', $qwotes);
 	}
