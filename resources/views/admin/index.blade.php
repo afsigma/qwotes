@@ -37,7 +37,12 @@
 
          
           <tr>
-            <td class="ellipse">{{ $qwote->qwote }}</td>
+            <td class="ellipse">
+            {{ $qwote->qwote }}
+            <br>
+            <small class="light-blue-text lighten-2">{{ $qwote->author }}</small>
+
+            </td>
 
              {!! Form::model($qwote, array('method' => 'put', 'route' => array('admin/qwick_update', $qwote->id))) !!}
             <td>
@@ -73,7 +78,7 @@
          </table>
         
          <?php echo $qwotes->render(); ?>
-         
+
         </div>
       </div>     
                   
