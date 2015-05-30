@@ -48,9 +48,19 @@
           @else
             
             <li><a class="blue-text lighten-1" href="{{ url('/auth/logout') }}">Logout</a></li>
-             
+            
+            
+
           @endif
+
+           
+             
+
       </ul>
+      
+    
+
+
     </div>
   </nav>
 

@@ -5,6 +5,15 @@
      }
 }
 
+
+.ellipse{
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 60px;
+}
+
 nav ,.btn-floating.btn-large{margin-bottom:20px;}
 
 .quote {

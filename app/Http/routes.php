@@ -33,7 +33,23 @@ Route::put('settings_update/{id}', ['as' => 'settings_update', 'uses' => 'Settin
 
 Route::post('create', 'QwoteController@store');
 
+
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role']], function()
+{
+    
+Route::get('index', ['as' => 'admin', 'uses' => 'AdminController@index']);
+
+Route::put('update/{id}', ['as' => 'admin/update', 'uses' => 'AdminController@update']);
+
+Route::put('qwick_update/{id}', ['as' => 'admin/qwick_update', 'uses' => 'AdminController@qwick_update']);
+
+Route::get('edit/{id}', ['as' => 'admin/edit', 'uses' => 'AdminController@edit']);
+
+});
+

@@ -27,6 +27,7 @@ class Kernel extends HttpKernel {
 		'auth' => 'qwotes\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'qwotes\Http\Middleware\RedirectIfAuthenticated',
+		'role' => 'qwotes\Http\Middleware\Roles',
 	];
 
 }

@@ -7,7 +7,7 @@
 			
                   @foreach ($qwotes as $qwote)
 
-                  {!! Form::model($qwote, array('method' => 'put', 'route' => array('update', $qwote->id))) !!}
+                  {!! Form::model($qwote, array('method' => 'put', 'route' => array('admin/update', $qwote->id))) !!}
                  
                   
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">

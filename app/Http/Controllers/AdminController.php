@@ -4,28 +4,30 @@ use qwotes\Http\Requests;
 use qwotes\Http\Controllers\Controller;
 use qwotes\Qwote;
 use Illuminate\Support\Facades\Redirect;
-use Auth;
 use Request;
 
-class QwoteController extends Controller {
-
-
-
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
+class AdminController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
+
+
+    public function __construct()
+	{
+		$this->middleware('auth');
+
+		$this->middleware('role');
+	}
+
+
 	public function index()
 	{
-        $qwote = Qwote::all();
+		$qwotes = Qwote::all();
 
-		return view('qwotes.new');
+		return view('admin.index')->with('qwotes', $qwotes);
 	}
 
 	/**
@@ -35,9 +37,7 @@ class QwoteController extends Controller {
 	 */
 	public function create()
 	{
-		
-
-		
+		//
 	}
 
 	/**
@@ -45,19 +45,9 @@ class QwoteController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Requests\QwotesRequest $request)
+	public function store()
 	{
-		$qwote = new Qwote;
-
-
-        $qwote->user_id = Auth::user()->id;
-		$qwote->qwote = $request->input('qwote');
-		$qwote->author = $request->input('author');
-		$qwote->type = $request->input('type');
-        $qwote->public = $request->input('public');
-		$qwote->save();
-
-		return Redirect::route('home');
+		//
 	}
 
 	/**
@@ -79,13 +69,11 @@ class QwoteController extends Controller {
 	 */
 	public function edit($id)
 	{
-		$qwotes = Qwote::where('user_id', Auth::user()->id)->where('id', $id)->get();
+		$qwotes = Qwote::where('id', $id)->get();
 		
-		return view('qwotes.edit')->with('qwotes', $qwotes);
+		return view('admin.edit')->with('qwotes', $qwotes);
 	}
 
-
-	
 	/**
 	 * Update the specified resource in storage.
 	 *
@@ -94,18 +82,38 @@ class QwoteController extends Controller {
 	 */
 	public function update($id, Requests\QwotesRequest $request)
 	{
-		$qwote = Qwote::where('user_id', Auth::user()->id)->where('id', $id)->first();
+		$qwote = Qwote::where('id', $id)->first();
 
-
-        $qwote->user_id = Auth::user()->id;
+       
 		$qwote->qwote = $request->input('qwote');
 		$qwote->author = $request->input('author');
 		$qwote->type = $request->input('type');
+		$qwote->vetted = $request->input('vetted');
         $qwote->public = $request->input('public');
+
 		$qwote->save();
 
-		return Redirect::route('home');
+		return Redirect::route('admin');
+	}
 
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function qwick_update($id)
+	{
+		$qwote = Qwote::where('id', $id)->first();
+
+      
+		$qwote->vetted = Request::input('vetted');
+        $qwote->public = Request::input('public');
+
+		$qwote->save();
+
+		return Redirect::route('admin');
 	}
 
 	/**
@@ -116,11 +124,7 @@ class QwoteController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$qwote = Qwote::where('user_id', Auth::user()->id)->where('id', $id)->first();
-
-		$qwote->delete();
-
-		return Redirect::route('home');
+		//
 	}
 
 }

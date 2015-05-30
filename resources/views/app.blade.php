@@ -39,10 +39,14 @@
             <li><a href="{{ url('/auth/login') }}">Login</a></li>
             <li><a href="{{ url('/auth/register') }}">Register</a></li>
           @else
+              
+                @if (Auth::user()->role == 'admin')
+                  <li><a href="{{ url('admin/index') }}">Admin</a></li>
+                @endif
+
                 <li><a href="{{ url('home') }}">Home</a></li>
                 <li><a href="{{ url('settings') }}">Settings</a></li>
-                <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-
+                 <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
              
           @endif
        
@@ -52,6 +56,11 @@
             <li><a href="{{ url('/auth/login') }}">Login</a></li>
             <li><a href="{{ url('/auth/register') }}">Register</a></li>
           @else
+             
+            @if (Auth::user()->role == 'admin')
+                  <li><a href="{{ url('admin/index') }}">Admin</a></li>
+            @endif
+
             <li><a href="{{ url('home') }}">Home</a></li>
             <li><a href="{{ url('settings') }}">Settings</a></li>
             <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
