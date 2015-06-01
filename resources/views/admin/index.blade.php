@@ -40,8 +40,10 @@
             <td class="ellipse blue-text text-darken-2">
             {{ $qwote->qwote }}
             <br>
+            <small class="grey-text lighten-3"> {{ date("d F Y",strtotime($qwote->created_at)) }}</small>
+            
+            <br>
             <small class="grey-text lighten-3">&#8212 {{ $qwote->author }}</small>
-
             </td>
 
              {!! Form::model($qwote, array('method' => 'put', 'route' => array('admin/qwick_update', $qwote->id))) !!}
