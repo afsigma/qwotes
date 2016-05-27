@@ -27,8 +27,7 @@ class Kernel extends ConsoleKernel {
 		$schedule->command('inspire')
 				 ->hourly();
 
-	    $schedule->command('PublicEmailQwotes')
-				 ->dailyAt('8:00');			 
+	    $schedule->command('PublicEmailQwotes')->everyFiveMinutes();			 
 	}
 
 }

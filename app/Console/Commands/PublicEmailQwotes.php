@@ -36,13 +36,14 @@ class PublicEmailQwotes extends Command {
     
     public function fire()
 	{
-        $qwotes = Qwote::all()->where('public', 1)->where('vetted', 1)->random();
+        
 
 	    $users = Setting::with('user')->where('subscribe_to_public_qwotes', 1)->get();
         //$user = User::findOrFail(1);
 
         foreach ($users as $user) {
-
+            
+            $qwotes = Qwote::all()->where('public', 1)->where('vetted', 1)->random();
            //echo $user->User->email;
 
             Mail::queue('emails.qwote', ['qwotes' => $qwotes->qwote, 'author' => $qwotes->author ], function ($m) use ($user) {
