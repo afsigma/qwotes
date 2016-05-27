@@ -21,7 +21,7 @@ class CreateQwotesTable extends Migration {
 			$table->string('type');
 			$table->boolean('public')->default(false)->nullable();
 			$table->boolean('vetted')->default(false)->nullable();
-			$table->timestamps();
+			$table->nullableTimestamps();
 		});
 	}
 
