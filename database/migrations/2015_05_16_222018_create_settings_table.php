@@ -19,7 +19,7 @@ class CreateSettingsTable extends Migration {
 			$table->string('type')->nullable();
 			$table->boolean('subscribe_to_public_qwotes')->default(false)->nullable();
 			$table->boolean('subscribe_to_my_qwotes')->default(true)->nullable();
-			$table->timestamps();
+			$table->nullableTimestamps();
 		});
 	}
 
