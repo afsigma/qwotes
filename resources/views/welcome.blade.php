@@ -25,29 +25,29 @@
 
     		<nav class="white">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo blue-text lighten-1">Qwotes</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse blue-text lighten-1"><i class="mdi-navigation-menu"></i></a>
+      <a href="#!" class="brand-logo red-text lighten-1">Qwotes</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse red-text lighten-1"><i class="mdi-navigation-menu"></i></a>
       <ul class="right hide-on-med-and-down">
      
 
         
           @if (Auth::guest())
-            <li><a class="blue-text lighten-1" href="{{ url('/auth/login') }}">Login</a></li>
-            <li><a class="blue-text lighten-1" href="{{ url('/auth/register') }}">Register</a></li>
+            <li><a class="red-text lighten-1" href="{{ url('/auth/login') }}">Login</a></li>
+            <li><a class="red-text lighten-1" href="{{ url('/auth/register') }}">Register</a></li>
           @else
             
-                <li><a class="blue-text lighten-1" href="{{ url('/auth/logout') }}">Logout</a></li>
+                <li><a class="red-text lighten-1" href="{{ url('/auth/logout') }}">Logout</a></li>
              
           @endif
        
       </ul>
       <ul class="side-nav" id="mobile-demo">
          @if (Auth::guest())
-            <li><a class="blue-text lighten-1" href="{{ url('/auth/login') }}">Login</a></li>
-            <li><a class="blue-text lighten-1" href="{{ url('/auth/register') }}">Register</a></li>
+            <li><a class="red-text lighten-1" href="{{ url('/auth/login') }}">Login</a></li>
+            <li><a class="red-text lighten-1" href="{{ url('/auth/register') }}">Register</a></li>
           @else
             
-            <li><a class="blue-text lighten-1" href="{{ url('/auth/logout') }}">Logout</a></li>
+            <li><a class="red-text lighten-1" href="{{ url('/auth/logout') }}">Logout</a></li>
             
             
 
