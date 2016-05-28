@@ -42,11 +42,12 @@
               
                 @if (Auth::user()->role == 'admin')
                   <li><a href="{{ url('admin/index') }}">All Qwotes</a></li>
-                  <li><a href="{{ url('admin/users') }}">Users</a></li>
+                  <li><a href="{{ url('admin/users') }}">All Users</a></li>
                 @endif
 
                 <li><a href="{{ url('home') }}">My Qwotes</a></li>
-                <li><a href="{{ url('settings') }}">Settings</a></li>
+                <li><a href="{{ url('profile') }}">My Profile</a></li>
+                <li><a href="{{ url('settings') }}">My Settings</a></li>
                  <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
              
           @endif
@@ -60,11 +61,11 @@
              
             @if (Auth::user()->role == 'admin')
                   <li><a href="{{ url('admin/index') }}">All Qwotes</a></li>
-                  <li><a href="{{ url('admin/users') }}">Users</a></li>
+                  <li><a href="{{ url('admin/users') }}">All Users</a></li>
             @endif
-
             <li><a href="{{ url('home') }}">My Qwotes</a></li>
-            <li><a href="{{ url('settings') }}">Settings</a></li>
+            <li><a href="{{ url('profile') }}">My Profile</a></li>
+            <li><a href="{{ url('settings') }}">My Settings</a></li>
             <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
              
           @endif

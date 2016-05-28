@@ -3,20 +3,30 @@
 use qwotes\Http\Requests;
 use qwotes\Http\Controllers\Controller;
 use qwotes\User;
+use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
-class UserController extends Controller {
+class ProfileController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
+
+    public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
+
 	public function index()
 	{
-		$users = User::orderBy('created_at', 'DESC')->paginate(10);
+		$user = User::where('id', Auth::user()->id)->first();
 
-		return view('admin.users')->with('users', $users);
+		return view('profile.edit')->with('user', $user);
+
 	}
 
 	/**
@@ -67,9 +77,19 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, Requests\ProfileRequest $request)
 	{
-		//
+		$user = User::where('id', Auth::user()->id)->first();
+
+
+        $user->id = Auth::user()->id;
+		$user->name = $request->input('name');
+		$user->email = $request->input('email');
+		
+		$user->save();
+
+		return Redirect::route('home');
+
 	}
 
 	/**

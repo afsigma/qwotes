@@ -29,6 +29,10 @@ Route::put('update/{id}', ['as' => 'update', 'uses' => 'QwoteController@update']
 
 Route::get('settings', ['as' => 'settings', 'uses' => 'SettingController@index']);
 
+Route::get('profile', ['as' => 'profile', 'uses' => 'ProfileController@index']);
+
+Route::put('profile_update/{id}', ['as' => 'profile_update', 'uses' => 'ProfileController@update']);
+
 Route::put('settings_update/{id}', ['as' => 'settings_update', 'uses' => 'SettingController@update']);
 
 Route::post('create', 'QwoteController@store');
@@ -45,7 +49,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role']], function()
     
 Route::get('index', ['as' => 'admin', 'uses' => 'AdminController@index']);
 
-Route::get('users', ['as' => 'admin', 'uses' => 'UserController@index']);
+Route::get('users', ['as' => 'users', 'uses' => 'UsersController@index']);
 
 Route::put('update/{id}', ['as' => 'admin/update', 'uses' => 'AdminController@update']);
 
