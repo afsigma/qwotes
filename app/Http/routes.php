@@ -45,6 +45,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role']], function()
     
 Route::get('index', ['as' => 'admin', 'uses' => 'AdminController@index']);
 
+Route::get('users', ['as' => 'admin', 'uses' => 'UserController@index']);
+
 Route::put('update/{id}', ['as' => 'admin/update', 'uses' => 'AdminController@update']);
 
 Route::put('qwick_update/{id}', ['as' => 'admin/qwick_update', 'uses' => 'AdminController@qwick_update']);

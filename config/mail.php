@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['services@junecity.com' => null, 'name' => null],
+	'from' => ['address' => 'services@junecity.com', 'name' => 'Qwotes'],
 
 	/*
 	|--------------------------------------------------------------------------
