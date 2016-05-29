@@ -36,7 +36,7 @@
 
         
           @if (Auth::guest())
-            <li><a href="{{ url('home') }}">Home</a></li>
+            <li><a href="{{ url('qwotes') }}">Home</a></li>
             <li><a href="{{ url('/auth/login') }}">Login</a></li>
             <li><a href="{{ url('/auth/register') }}">Register</a></li>
           @else
