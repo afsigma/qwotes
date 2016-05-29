@@ -11,7 +11,7 @@ class Kernel extends ConsoleKernel {
 	 * @var array
 	 */
 	protected $commands = [
-		'qwotes\Console\Commands\Inspire',
+		//'qwotes\Console\Commands\Inspire',
 		'qwotes\Console\Commands\PublicEmailQwotes',
 		
 	];
@@ -24,11 +24,10 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected function schedule(Schedule $schedule)
 	{
-		$schedule->command('inspire')
-				 ->hourly();
+		//$schedule->command('inspire')->hourly();
 
 	    $schedule->command('PublicEmailQwotes')
-				 ->hourly();			 
+				 ->everyFiveMinutes();			 
 	}
 
 }
