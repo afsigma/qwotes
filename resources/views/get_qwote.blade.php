@@ -32,11 +32,20 @@
 
         
           @if (Auth::guest())
-            <li><a class="red-text lighten-1" href="{{ url('qwotes') }}">Get Qwote</a></li>
+            <li><a class="red-text lighten-1" href="{{ url('/qwotes') }}">Get Qwote</a></li>
             <li><a class="red-text lighten-1" href="{{ url('/auth/login') }}">Login</a></li>
             <li><a class="red-text lighten-1" href="{{ url('/auth/register') }}">Register</a></li>
           @else
-            
+              
+                @if (Auth::user()->role == 'admin')
+                  <li><a class="red-text lighten-1" href="{{ url('admin/index') }}">All Qwotes</a></li>
+                  <li><a class="red-text lighten-1" href="{{ url('admin/users') }}">All Users</a></li>
+                @endif
+
+                <li><a class="red-text lighten-1" href="{{ url('home') }}">My Qwotes</a></li>
+                <li><a class="red-text lighten-1" href="{{ url('profile') }}">My Profile</a></li>
+                <li><a class="red-text lighten-1" href="{{ url('settings') }}">My Settings</a></li>
+                <li><a class="red-text lighten-1" href="{{ url('/qwotes') }}">Get Qwote</a></li>
                 <li><a class="red-text lighten-1" href="{{ url('/auth/logout') }}">Logout</a></li>
              
           @endif
@@ -44,20 +53,21 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
          @if (Auth::guest())
-            <li><a class="red-text lighten-1" href="{{ url('qwotes') }}">Get Qwote</a></li>
             <li><a class="red-text lighten-1" href="{{ url('/auth/login') }}">Login</a></li>
             <li><a class="red-text lighten-1" href="{{ url('/auth/register') }}">Register</a></li>
           @else
-            
-            <li><a class="red-text lighten-1" href="{{ url('/auth/logout') }}">Logout</a></li>
-            
-            
-
-          @endif
-
-           
              
-
+            @if (Auth::user()->role == 'admin')
+                  <li><a class="red-text lighten-1" href="{{ url('admin/index') }}">All Qwotes</a></li>
+                  <li><a class="red-text lighten-1" href="{{ url('admin/users') }}">All Users</a></li>
+            @endif
+            <li><a class="red-text lighten-1" href="{{ url('home') }}">My Qwotes</a></li>
+            <li><a class="red-text lighten-1" href="{{ url('profile') }}">My Profile</a></li>
+            <li><a class="red-text lighten-1" href="{{ url('settings') }}">My Settings</a></li>
+            <li><a class="red-text lighten-1" href="{{ url('/qwotes') }}">Get Qwote</a></li>
+            <li><a class="red-text lighten-1" href="{{ url('/auth/logout') }}">Logout</a></li>
+             
+          @endif
       </ul>
       
     

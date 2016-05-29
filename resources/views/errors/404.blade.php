@@ -1,8 +1,27 @@
 <html>
 	<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+
+		<style>
+			body {
+				
+				color: #B0BEC5;
+				
+				
+			}
+
+			
+
+			.content {
+				text-align: center;
+				display: inline-block;
+			}
+
+			.title {
+				font-size: 72px;
+				margin-bottom: 40px;
+			}
+		</style>
 		<title>Qwotes</title>
 
 		<link href="{{ asset('/css/style.css') }}" rel="stylesheet">
@@ -19,11 +38,9 @@
 		 <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
 
-		
 	</head>
 	<body>
-
-    		<nav class="white">
+	<nav class="white">
     <div class="nav-wrapper">
       <a href="{{ url('qwotes') }}" class="brand-logo red-text lighten-1">Qwotes</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse red-text lighten-1"><i class="mdi-navigation-menu"></i></a>
@@ -65,19 +82,11 @@
 
     </div>
   </nav>
-
-            <div class="container">
-             <div class="row welcome">
-               <div class="center quote">&#34 {{ $qwotes->qwote }} &#34</div>
-               <p class="center author">&#8212 {{ $qwotes->author }}</p>
-            </div>
-            
-            </div>
-		
-	
-		
-
-
+		<div class="container">
+			<div class="content">
+				<div class="title">That page doesn't exist</div>
+			</div>
+		</div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
 <!-- Compiled and minified JavaScript -->
