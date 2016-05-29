@@ -17,6 +17,8 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::get('qwotes', ['as' => 'qwotes', 'uses' => 'WelcomeController@index']);
+
 Route::get('home', ['as' => 'home', 'uses' => 'HomeController@index']);
 
 Route::get('new', ['as' => 'new', 'uses' => 'QwoteController@index']);

@@ -49,7 +49,7 @@
                 <li><a href="{{ url('home') }}">My Qwotes</a></li>
                 <li><a href="{{ url('profile') }}">My Profile</a></li>
                 <li><a href="{{ url('settings') }}">My Settings</a></li>
-                <li><a href="{{ url('home') }}">Home</a></li>
+                <li><a href="{{ url('qwotes') }}">Home</a></li>
                 <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
              
           @endif
@@ -68,7 +68,7 @@
             <li><a href="{{ url('home') }}">My Qwotes</a></li>
             <li><a href="{{ url('profile') }}">My Profile</a></li>
             <li><a href="{{ url('settings') }}">My Settings</a></li>
-            <li><a href="{{ url('home') }}">Home</a></li>
+            <li><a href="{{ url('qwotes') }}">Home</a></li>
             <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
              
           @endif

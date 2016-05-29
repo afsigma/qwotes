@@ -25,13 +25,14 @@
 
     		<nav class="white">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo red-text lighten-1">Qwotes</a>
+      <a href="{{ url('qwotes') }}" class="brand-logo red-text lighten-1">Qwotes</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse red-text lighten-1"><i class="mdi-navigation-menu"></i></a>
       <ul class="right hide-on-med-and-down">
      
 
         
           @if (Auth::guest())
+            <li><a href="{{ url('qwotes') }}">Reload Qwotes</a></li>
             <li><a class="red-text lighten-1" href="{{ url('/auth/login') }}">Login</a></li>
             <li><a class="red-text lighten-1" href="{{ url('/auth/register') }}">Register</a></li>
           @else
@@ -43,6 +44,7 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
          @if (Auth::guest())
+            <li><a href="{{ url('qwotes') }}">Reload Qwotes</a></li>
             <li><a class="red-text lighten-1" href="{{ url('/auth/login') }}">Login</a></li>
             <li><a class="red-text lighten-1" href="{{ url('/auth/register') }}">Register</a></li>
           @else
