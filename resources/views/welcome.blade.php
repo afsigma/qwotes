@@ -32,7 +32,7 @@
 
         
           @if (Auth::guest())
-            <li><a href="{{ url('qwotes') }}">Reload Qwotes</a></li>
+            <li><a class="red-text lighten-1" href="{{ url('qwotes') }}">Get Qwote</a></li>
             <li><a class="red-text lighten-1" href="{{ url('/auth/login') }}">Login</a></li>
             <li><a class="red-text lighten-1" href="{{ url('/auth/register') }}">Register</a></li>
           @else
@@ -44,7 +44,7 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
          @if (Auth::guest())
-            <li><a class="red-text lighten-1" href="{{ url('qwotes') }}">Next Qwote</a></li>
+            <li><a class="red-text lighten-1" href="{{ url('qwotes') }}">Get Qwote</a></li>
             <li><a class="red-text lighten-1" href="{{ url('/auth/login') }}">Login</a></li>
             <li><a class="red-text lighten-1" href="{{ url('/auth/register') }}">Register</a></li>
           @else
