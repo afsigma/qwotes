@@ -27,7 +27,7 @@ class Kernel extends ConsoleKernel {
 		//$schedule->command('inspire')->hourly();
 
 	    $schedule->command('PublicEmailQwotes')
-				 ->hourly();			 
+				 ->dailyAt('8:00');			 
 	}
 
 }
