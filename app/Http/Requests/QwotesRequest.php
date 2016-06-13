@@ -24,7 +24,7 @@ class QwotesRequest extends Request {
 		return [
 
 			'qwote' => 'required|min:3|max:600',
-			'author' => 'required|min:3|max:100'
+			'author' => 'required|min:3|max:400'
 		];
 	}
 
