@@ -91,7 +91,7 @@
           <div class="footer-copyright blue lighten-2">
             <div class="container">
 
-            © {{date('Y')}} <a href="http://andreferreira.info/"> Andre Ferreira</a>, All rights reserved.
+            © {{date('Y')}} <a href="http://andreferreira.info/" style="color:#fff"> Andre Ferreira </a> , All rights reserved.
           
             </div>
           </div>
