@@ -91,7 +91,7 @@
           <div class="footer-copyright blue lighten-2">
             <div class="container">
 
-            © 2010 - {{date('Y')}} Junecity LLC, All rights reserved.
+            © {{date('Y')}} <a href="http://andreferreira.info/"> Andre Ferreira</a>, All rights reserved.
           
             </div>
           </div>
